@@ -15,6 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    func bubbleSort(array : Array<Int>) -> Array<Int>  {
+        var temp = Array<Int>()
+        for index in array {
+            print("\(index)")
+            temp.append(index)
+        }
+        return temp
+    }
 }
 
