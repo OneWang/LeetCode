@@ -16,7 +16,12 @@ class ViewController: UIViewController {
         
 //        let test = WFBaseSort()
 //        print("\(test.bubbleSort(array: [5,2,9,1,7,3]))")
-        print("\(WFBaseSort.bubbleSort(array: [3,4,1,6]))")
+//        print("\(WFBaseSort.bubbleSort(array: [3,4,1,6]))")
+        
+        print("\(2 << 4)")
+        
+        let test = ArrayPartitionI()
+        print("\(test.arrayPairSum([2,41,5,6,3]))")
     }
 }
 
