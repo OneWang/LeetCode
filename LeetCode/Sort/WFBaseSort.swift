@@ -21,7 +21,7 @@ class WFBaseSort: NSObject {
     }
 }
 
-///数组的拆分
+///561.数组的拆分
 /**
  按位与，由于位运算直接对内存数据进行操作，不需要转成十进制，因此处理速度非常快；
  1.奇偶性判断
@@ -53,7 +53,7 @@ class ArrayPartitionI {
         var res = 0
         for i in 0..<arr.count {
             if i & 1 == 0 {
-                res += i
+                res += arr[i]
             }
         }
         return res
@@ -68,3 +68,19 @@ class ArrayPartitionI_2 {
     }
 }
 
+///88.合并两个有序数组
+class Solution {
+    func mergeSortArray(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+        var i = m - 1, j = n - 1
+        
+        while i >= 0 || j >= 0 {
+            if j < 0 || (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[i + j + 1] = nums1[i]
+                i -= 1
+            } else {
+                nums1[i + j + 1] = nums2[j]
+                j -= 1
+            }
+        }
+    }
+}

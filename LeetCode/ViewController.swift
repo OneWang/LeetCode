@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         print("\(2 << 4)")
         
         let test = ArrayPartitionI()
-        print("\(test.arrayPairSum([2,41,5,6,3]))")
+        print("\(test.arrayPairSum1([1,4,3,2]))")
     }
 }
 
