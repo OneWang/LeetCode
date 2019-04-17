@@ -69,6 +69,7 @@ class ArrayPartitionI_2 {
 }
 
 ///88.合并两个有序数组
+//从最后一个开始比较插入
 class Solution {
     func mergeSortArray(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var i = m - 1, j = n - 1
@@ -84,3 +85,6 @@ class Solution {
         }
     }
 }
+
+//57.给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
+//此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。
