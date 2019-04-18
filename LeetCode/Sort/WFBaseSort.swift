@@ -88,3 +88,26 @@ class Solution {
 
 //57.给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
 //此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。
+class SortColors {
+    func sortColors(_ nums: inout [Int]) {
+        var red = 0, blue = nums.count - 1, i = 0
+        
+        while i <= blue {
+            if nums[i] == 0 {
+                _swap(&nums, i, red)
+                red += 1
+                i += 1
+            } else if nums[i] == 1 {
+                i += 1
+            } else {
+                _swap(&nums, i, blue)
+                blue -= 1
+            }
+        }
+    }
+    //private 访问级别所修饰的属性或者方法只能在当前类里访问
+    //fileprivate 访问级别所修饰的属性或者方法在当前的 Swift 源文件里可以访问
+    fileprivate func _swap<T>(_ nums: inout [T], _ p: Int, _ q: Int) {
+        (nums[p], nums[q]) = (nums[q], nums[p])
+    }
+}
