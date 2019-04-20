@@ -70,6 +70,7 @@ class ArrayPartitionI_2 {
 
 ///88.合并两个有序数组
 //从最后一个开始比较插入
+//Time Complexity: O(n), Space Complexity: O(1)
 class Solution {
     func mergeSortArray(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var i = m - 1, j = n - 1
@@ -88,6 +89,7 @@ class Solution {
 
 //57.给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
 //此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。
+//Time Complexity: O(n), Space Complexity: O(1)
 class SortColors {
     func sortColors(_ nums: inout [Int]) {
         var red = 0, blue = nums.count - 1, i = 0
@@ -109,5 +111,40 @@ class SortColors {
     //fileprivate 访问级别所修饰的属性或者方法在当前的 Swift 源文件里可以访问
     fileprivate func _swap<T>(_ nums: inout [T], _ p: Int, _ q: Int) {
         (nums[p], nums[q]) = (nums[q], nums[p])
+    }
+}
+
+/**
+ * Time Complexity: O(n), Space Complexity: O(1)
+    迭代数组并将最大的数组交换到中间
+ */
+
+class WiggleSort {
+    func wiggleSort(_ nums: inout [Int]) {
+        guard nums.count >= 2 else {
+            return
+        }
+        
+        for i in stride(from: 1, to: nums.count, by: 2) {
+            let idx = getLargest(nums, i - 1, i , i + 1)
+            (nums[i], nums[idx]) = (nums[idx], nums[i])
+        }
+    }
+    
+    private func getLargest(_ nums: [Int], _ x: Int, _ y: Int, _ z: Int) -> Int {
+        let len = nums.count
+        
+        let xVal = x >= 0 && x < len ? nums[x] : Int.min
+        let yVal = y >= 0 && y < len ? nums[y] : Int.min
+        let zVal = z >= 0 && z < len ? nums[z] : Int.min
+        let maxVal = max(xVal, yVal, zVal)
+        
+        if maxVal == xVal {
+            return x
+        } else if maxVal == yVal {
+            return y
+        } else {
+            return z
+        }
     }
 }
