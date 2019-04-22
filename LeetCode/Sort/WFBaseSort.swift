@@ -117,6 +117,10 @@ class SortColors {
 /**
  * Time Complexity: O(n), Space Complexity: O(1)
     迭代数组并将最大的数组交换到中间
+ 
+ guard语句和if语句有点类似，都是根据其关键字之后的表达式的布尔值决定下一步执行什么。但与if语句不同的是，guard语句只会有一个代码块，不像if语句可以if else多个代码块。
+ 
+ 那么guard语句的作用到底是什么呢？顾名思义，就是守护。guard语句判断其后的表达式布尔值为false时，才会执行之后代码块里的代码，如果为true，则跳过整个guard语句，
  */
 
 class WiggleSort {
@@ -133,12 +137,10 @@ class WiggleSort {
     
     private func getLargest(_ nums: [Int], _ x: Int, _ y: Int, _ z: Int) -> Int {
         let len = nums.count
-        
         let xVal = x >= 0 && x < len ? nums[x] : Int.min
         let yVal = y >= 0 && y < len ? nums[y] : Int.min
         let zVal = z >= 0 && z < len ? nums[z] : Int.min
         let maxVal = max(xVal, yVal, zVal)
-        
         if maxVal == xVal {
             return x
         } else if maxVal == yVal {
