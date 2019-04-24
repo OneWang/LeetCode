@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         
         let test = ArrayPartitionI()
         print("\(test.arrayPairSum1([1,4,3,2]))")
+        
+        var array = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        let test1 = WFArray()
+        print("\(test1.insertArray(array: &array))")
     }
 }
 
