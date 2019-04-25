@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         var array = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
         let test1 = WFArray()
         print("\(test1.insertArray(array: &array))")
+        
     }
 }
 
