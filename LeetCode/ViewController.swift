@@ -27,6 +27,9 @@ class ViewController: UIViewController {
         let test1 = WFArray()
         print("\(test1.insertArray(array: &array))")
         
+        let array1 = [1,3,12,4,24,34,11,2,2,3]
+        let test = TopKFrequentElements()
+        print("\(test.topKFrequent(nums: array1, 2))")
     }
 }
 

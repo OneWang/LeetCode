@@ -191,13 +191,18 @@ class TopKFrequentElements {
             map[num] = times + 1
         }
         
+        print("\(type(of: map))")
+        
         var keys = Array(map.keys)
         keys.sort() {
             let value1 = map[$0] ?? 0
             let value2 = map[$1] ?? 0
             return value1 > value2
         }
-        
+        /**
+         map接收一个闭包作为参数，然后遍历整个数组，执行闭包里面的操作，可以看作对数组里所有的元素做了一个映射，返回来的是一个数组。
+         
+         */
         return Array(keys[0..<k])
     }
 }
