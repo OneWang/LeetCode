@@ -30,6 +30,12 @@ class ViewController: UIViewController {
         let array1 = [1,3,12,4,24,34,11,2,2,3]
         let test = TopKFrequentElements()
         print("\(test.topKFrequent(nums: array1, 2))")
+        
+        ///块便利
+        for (index,num) in array1.enumerated() {
+            print("\(index)====\(num)")
+        }
+        
     }
 }
 

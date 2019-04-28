@@ -35,3 +35,14 @@ class WFArray: NSObject {
         return array
     }
 }
+
+//给定一个非负整数数组 A，返回一个由 A 的所有偶数元素组成的数组，后面跟 A 的所有奇数元素。
+class sortArray {
+    func sortArrayByParity(_ A: [Int]) -> [Int] {
+        var tempArray = [Int]()
+        for (_,num) in A.enumerated() {
+            tempArray.insert(num, at: num & 1 == 0 ? 0 : tempArray.count)
+        }
+        return tempArray
+    }
+}
