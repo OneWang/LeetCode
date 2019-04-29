@@ -46,3 +46,20 @@ class sortArray {
         return tempArray
     }
 }
+
+//给定一个二进制数组，找出该数组中连续的1的最大数目。
+//Time Complexity: O(n), Space Complexity: O(1)
+class MaxConsecutiveOnes {
+    func findMaxConsecutiveOnes(_ nums: [Int]) -> Int {
+        var globalMax = 0, localMax = 0
+        for num in nums {
+            if num == 1 {
+                localMax += 1
+                globalMax = max(globalMax, localMax)
+            } else {
+                localMax = 0
+            }
+        }
+        return globalMax
+    }
+}
